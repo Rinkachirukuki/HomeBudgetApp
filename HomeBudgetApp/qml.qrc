@@ -1,5 +1,23 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Palette.qml</file>
+        <file>Icons/DELETE.png</file>
+        <file>Icons/EDIT.png</file>
+        <file>Icons/INFO.png</file>
+        <file>Icons/SETTINGS.png</file>
+        <file>ViewComponents/NavigationBar.qml</file>
+        <file>DefaultElements/CustomText.qml</file>
+        <file>DefaultElements/CustomImageButton.qml</file>
+        <file>ViewComponents/NavigationBarTextButton.qml</file>
+        <file>Pages/TransactionsPage.qml</file>
+        <file>ViewComponents/SettingsPopup.qml</file>
+        <file>ViewComponents/InfoPopup.qml</file>
+        <file>DefaultElements/CustomTextArea.qml</file>
+        <file>DelegateEntities/FamilyMemberDelegate.qml</file>
+        <file>DelegateEntities/TransactionDelegate.qml</file>
+        <file>Pages/FamilyPage.qml</file>
+        <file>Pages/GoodsPage.qml</file>
+        <file>Pages/ReportsPage.qml</file>
     </qresource>
 </RCC>
