@@ -1,11 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 
-import "qrc:/DefaultElements"
-
-
 Rectangle {
-
     property bool   isActive: false
     property string displayText: ""
 
@@ -13,6 +9,8 @@ Rectangle {
 
     Layout.preferredHeight: buttonText.height + 15
     Layout.preferredWidth: buttonText.width + 30
+    height: buttonText.height + 15
+    width: buttonText.width + 30
 
     radius: 10
 

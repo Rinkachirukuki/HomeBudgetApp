@@ -9,6 +9,4 @@ Image {
 
     width: imageSize
     height: imageSize
-
-    autoTransform: true
 }

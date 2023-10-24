@@ -29,7 +29,7 @@ Item {
         }
         spacing: 5
 
-        NavigationBarTextButton {
+        CustomTextButton {
             id: transactionsButton
             displayText: "Транзакции"
 
@@ -43,7 +43,7 @@ Item {
             }
         }
 
-        NavigationBarTextButton {
+        CustomTextButton {
             id: familyButton
             displayText: "Семья"
 
@@ -57,7 +57,7 @@ Item {
             }
         }
 
-        NavigationBarTextButton {
+        CustomTextButton {
             id: goodsButton
             displayText: "Товары"
 
@@ -71,7 +71,7 @@ Item {
             }
         }
 
-        NavigationBarTextButton {
+        CustomTextButton {
             id: reportsButton
             displayText: "Отчёты"
 
