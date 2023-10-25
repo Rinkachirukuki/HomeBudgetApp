@@ -47,13 +47,13 @@ Item {
                 id: familyPageList
                 width: familyPageScrollView.width
 
-                spacing: 10
+                spacing: 5
 
                 delegate: FamilyModelDelegate { width: familyPageList.width - 15 }
 
                 footer:
                     Item {
-                        height: footerText.height + 15
+                        height: footerText.height + 25
                         width: familyPageList.width - 15
 
                         CustomText {

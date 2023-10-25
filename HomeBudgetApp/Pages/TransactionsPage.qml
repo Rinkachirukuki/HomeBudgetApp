@@ -47,13 +47,13 @@ Item {
                 id: transactionsPageList
                 width: transactionsPageScrollView.width
 
-                spacing: 10
+                spacing: 5
 
                 delegate: TransactionModelDelegate { width: transactionsPageList.width - 15 }
 
                 footer:
                     Item {
-                        height: footerText.height + 15
+                        height: footerText.height + 25
                         width: transactionsPageList.width - 15
 
                         CustomText {
@@ -65,6 +65,66 @@ Item {
 
                 model:
                     ListModel {
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "расход"
+                            transactionCategory: "Продукты"
+                            transactionAmount: "10000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "начисление"
+                            transactionCategory: "Зарплата"
+                            transactionAmount: "100000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "расход"
+                            transactionCategory: "Продукты"
+                            transactionAmount: "1000000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "расход"
+                            transactionCategory: "Продукты"
+                            transactionAmount: "10000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "начисление"
+                            transactionCategory: "Зарплата"
+                            transactionAmount: "100000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
+                        ListElement {
+                            dateTime: "24.10.23"
+                            transactionType: "расход"
+                            transactionCategory: "Продукты"
+                            transactionAmount: "1000000"
+
+                            firstName:  "Валерий"
+                            lastName:   "Жмышенко"
+                            patronymic: "Альбертович"
+                        }
                         ListElement {
                             dateTime: "24.10.23"
                             transactionType: "расход"

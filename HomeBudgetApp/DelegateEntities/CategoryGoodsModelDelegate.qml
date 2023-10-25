@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.15
 import "qrc:/DefaultElements"
 
 Item {
-    height: familyDelegateLayout.height + 10
+    height: categoryGoodsDelegateLayout.height + 10
 
     Rectangle {
         height: parent.height
@@ -15,10 +15,10 @@ Item {
         radius: 10
 
         RowLayout {
-            id: familyDelegateLayout
+            id: categoryGoodsDelegateLayout
             anchors {
                 left: parent.left
-                right: familyDelegateOptionsLayout.left
+                right: categoryGoodsDelegateOptionsLayout.left
                 verticalCenter: parent.verticalCenter
                 margins: 5
                 leftMargin: 10
@@ -33,26 +33,16 @@ Item {
 
             ColumnLayout {
                 CustomText {
-                    text: lastName
+                    text: name
                     font.bold: true
                     clip: true
-                }
-                RowLayout {
-                    CustomText {
-                        text: firstName
-                        clip: true
-                    }
-                    CustomText {
-                        text: patronymic
-                        clip: true
-                    }
                 }
             }
             Item { Layout.fillWidth: true }
         }
 
         RowLayout {
-            id: familyDelegateOptionsLayout
+            id: categoryGoodsDelegateOptionsLayout
             anchors {
                 right: parent.right
                 verticalCenter: parent.verticalCenter

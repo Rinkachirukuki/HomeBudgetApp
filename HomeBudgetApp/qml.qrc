@@ -19,5 +19,6 @@
         <file>Pages/GoodsPage.qml</file>
         <file>Pages/ReportsPage.qml</file>
         <file>DefaultElements/CustomTextButton.qml</file>
+        <file>DelegateEntities/CategoryGoodsModelDelegate.qml</file>
     </qresource>
 </RCC>
