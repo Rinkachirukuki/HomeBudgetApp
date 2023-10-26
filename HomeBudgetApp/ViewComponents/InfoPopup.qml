@@ -21,6 +21,6 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     contentItem: CustomTextArea {
-        text: "1. Тык туда\n2. Тык сюда"
+        text: "Богданов Матвей\nТестовое задание 26.10.23\nВерсия 0.1"
     }
 }
