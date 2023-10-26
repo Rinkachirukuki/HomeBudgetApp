@@ -6,6 +6,11 @@ import "qrc:/DefaultElements"
 Item {
     height: transactionsDelegateLayout.height + 10
 
+    function unixTimeToText(unixTimestamp) {
+        var date = new Date(unixTimestamp * 1000)
+        return Qt.formatDate(date, "dd.MM.yyyy")
+     }
+
     Rectangle {
         height: parent.height
         width: parent.width
@@ -30,7 +35,7 @@ Item {
                 additionalSize: 4
                 clip: true
 
-                text: dateTime
+                text: unixTimeToText(datetime)
             }
 
             ColumnLayout {
@@ -40,17 +45,17 @@ Item {
 
                 CustomText {
                     additionalSize: -4
-                    text: firstName + " " + lastName + " " + patronymic[0] + "."
+                    text: first_name + " " + last_name + " " + patronymic[0] + "."
                 }
                 CustomText {
-                    text: transactionCategory
+                    text: name
                     font.bold: true
                 }
             }
             CustomText {
                 additionalSize: 4
-                text: ((transactionType === "начисление") ? "+" + transactionAmount : "-" + transactionAmount) + " р."
-                color: (transactionType === "начисление") ? colorPalette.positiveColor : colorPalette.negativeColor
+                text: amount
+                color: (parseFloat(amount) > 0) ? colorPalette.positiveColor : colorPalette.negativeColor
             }
             Item { Layout.fillWidth: true }
         }
@@ -70,16 +75,8 @@ Item {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                    }
-                }
-            }
-
-            CustomImageButton {
-                source: "qrc:/Icons/EDIT.png"
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
+                        transactionInfoPopup.open()
+                        transactionInfoPopup.setData(last_name, first_name, patronymic, amount, name, description, datetime)
                     }
                 }
             }

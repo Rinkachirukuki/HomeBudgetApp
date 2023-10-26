@@ -3,8 +3,16 @@ import QtQuick.Controls 2.15
 
 import "qrc:/DefaultElements"
 import "qrc:/DelegateEntities"
+import "qrc:/ViewComponents"
 
 Item {
+    TransactionAddPopup {
+        id: transactionAddPopup
+    }
+    TransactionInfoPopup {
+        id: transactionInfoPopup
+    }
+
     Rectangle {
         anchors.fill: parent
         color: colorPalette.accentBackgroundColor
@@ -28,6 +36,12 @@ Item {
             isActive: true
 
             z: 2
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    transactionAddPopup.open()
+                }
+            }
         }
 
         ScrollView {
@@ -63,99 +77,7 @@ Item {
                         }
                     }
 
-                model:
-                    ListModel {
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "10000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "начисление"
-                            transactionCategory: "Зарплата"
-                            transactionAmount: "100000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "1000000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "10000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "начисление"
-                            transactionCategory: "Зарплата"
-                            transactionAmount: "100000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "1000000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "10000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "начисление"
-                            transactionCategory: "Зарплата"
-                            transactionAmount: "100000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            dateTime: "24.10.23"
-                            transactionType: "расход"
-                            transactionCategory: "Продукты"
-                            transactionAmount: "1000000"
-
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                    }
+                model: TransactionsModel
             }
         }
     }

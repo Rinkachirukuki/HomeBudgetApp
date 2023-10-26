@@ -3,8 +3,13 @@ import QtQuick.Controls 2.15
 
 import "qrc:/DefaultElements"
 import "qrc:/DelegateEntities"
+import "qrc:/ViewComponents"
 
 Item {
+    FamilyAddEditPopup {
+        id: familyAddEditPopup
+    }
+
     Rectangle {
         anchors.fill: parent
         color: colorPalette.accentBackgroundColor
@@ -28,6 +33,13 @@ Item {
             isActive: true
 
             z: 2
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    familyAddEditPopup.open()
+                }
+            }
         }
 
         ScrollView {
@@ -62,50 +74,7 @@ Item {
                             text: familyPageList.count ? "Конец списка" : "Cписок пуст"
                         }
                     }
-
-                model:
-                    ListModel {
-                        ListElement {
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            firstName:  "Валерий1"
-                            lastName:   "Жмышенко1"
-                            patronymic: "Альбертович1"
-                        }
-                        ListElement {
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            firstName:  "Валерий1"
-                            lastName:   "Жмышенко1"
-                            patronymic: "Альбертович1"
-                        }
-                        ListElement {
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            firstName:  "Валерий1"
-                            lastName:   "Жмышенко1"
-                            patronymic: "Альбертович1"
-                        }
-                        ListElement {
-                            firstName:  "Валерий"
-                            lastName:   "Жмышенко"
-                            patronymic: "Альбертович"
-                        }
-                        ListElement {
-                            firstName:  "Валерий1"
-                            lastName:   "Жмышенко1"
-                            patronymic: "Альбертович1"
-                        }
-                    }
+                model: FamilyModel
             }
         }
     }

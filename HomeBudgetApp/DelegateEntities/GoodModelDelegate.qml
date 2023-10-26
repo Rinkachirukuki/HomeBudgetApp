@@ -6,7 +6,7 @@ import "qrc:/DefaultElements"
 import "qrc:/Pages"
 
 Item {
-    height: familyDelegateLayout.height + 10
+    height: goodsDelegateLayout.height + 10
 
     Rectangle {
         height: parent.height
@@ -17,10 +17,10 @@ Item {
         radius: 10
 
         RowLayout {
-            id: familyDelegateLayout
+            id: goodsDelegateLayout
             anchors {
                 left: parent.left
-                right: familyDelegateOptionsLayout.left
+                right: goodsDelegateOptionsLayout.left
                 verticalCenter: parent.verticalCenter
                 margins: 5
                 leftMargin: 10
@@ -30,7 +30,7 @@ Item {
             clip: true
 
             BlobImage {
-                id: familyIconButton
+                id: goodsIconButton
 
                 Layout.preferredHeight: 75
                 Layout.preferredWidth: 75
@@ -43,26 +43,16 @@ Item {
 
             ColumnLayout {
                 CustomText {
-                    text: last_name
+                    text: name
                     font.bold: true
                     clip: true
-                }
-                RowLayout {
-                    CustomText {
-                        text: first_name
-                        clip: true
-                    }
-                    CustomText {
-                        text: patronymic
-                        clip: true
-                    }
                 }
             }
             Item { Layout.fillWidth: true }
         }
 
         RowLayout {
-            id: familyDelegateOptionsLayout
+            id: goodsDelegateOptionsLayout
             anchors {
                 right: parent.right
                 verticalCenter: parent.verticalCenter
@@ -76,8 +66,8 @@ Item {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        familyAddEditPopup.open()
-                        familyAddEditPopup.setData(id, last_name, first_name, patronymic, icon)
+                        goodAddEditPopup.open()
+                        goodAddEditPopup.setData(id, category_id, name, icon)
                     }
                 }
             }
@@ -88,7 +78,7 @@ Item {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        FamilyRepository.deleteItem(id)
+                        GoodRepository.deleteItem(id)
                     }
                 }
             }

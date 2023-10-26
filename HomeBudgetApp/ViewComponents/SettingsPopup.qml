@@ -18,7 +18,7 @@ Popup {
         }
     }
 
-    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     contentItem: GridLayout {
         id: settingsLayout

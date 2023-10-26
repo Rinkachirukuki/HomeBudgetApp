@@ -1,11 +1,20 @@
-QT += quick
+QT += quick \
+      sql
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        Repositories/categoryrepository.cpp \
+        Repositories/familyrepository.cpp \
+        Repositories/goodrepository.cpp \
+        Repositories/transactionsrepository.cpp \
+        blobimage.cpp \
+        databasemanager.cpp \
+        filereader.cpp \
+        main.cpp \
+        sqlquerymodeltemplate.cpp
 
 RESOURCES += qml.qrc
 
@@ -19,3 +28,13 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    Repositories/categoryrepository.h \
+    Repositories/familyrepository.h \
+    Repositories/goodrepository.h \
+    Repositories/transactionsrepository.h \
+    blobimage.h \
+    databasemanager.h \
+    filereader.h \
+    sqlquerymodeltemplate.h

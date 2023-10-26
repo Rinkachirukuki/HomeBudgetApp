@@ -3,8 +3,16 @@ import QtQuick.Controls 2.15
 
 import "qrc:/DefaultElements"
 import "qrc:/DelegateEntities"
+import "qrc:/ViewComponents"
 
 Item {
+    CategoryAddEditPopup {
+        id: categoryAddEditPopup
+    }
+    GoodAddEditPopup {
+        id: goodAddEditPopup
+    }
+
     Rectangle {
         anchors.fill: parent
         color: colorPalette.accentBackgroundColor
@@ -13,7 +21,7 @@ Item {
 
         CustomTextButton {
             anchors {
-                right: parent.right
+                right: parent.horizontalCenter
                 bottom: parent.bottom
                 rightMargin: 25
                 bottomMargin: 10
@@ -28,6 +36,13 @@ Item {
             isActive: true
 
             z: 2
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    categoryAddEditPopup.open()
+                }
+            }
         }
 
         Rectangle {
@@ -77,7 +92,7 @@ Item {
 
                 spacing: 5
 
-                delegate: CategoryGoodsModelDelegate { width: categoriesPageList.width - 15 }
+                delegate: CategoryModelDelegate { width: categoriesPageList.width - 15 }
 
                 footer:
                     Item {
@@ -91,42 +106,13 @@ Item {
                         }
                     }
 
-                model:
-                    ListModel {
-                        ListElement {
-                            name:  "Категория 1"
-                        }
-                        ListElement {
-                            name:  "Категория 2"
-                        }
-                        ListElement {
-                            name:  "Категория 3"
-                        }
-                        ListElement {
-                            name:  "Категория 1"
-                        }
-                        ListElement {
-                            name:  "Категория 2"
-                        }
-                        ListElement {
-                            name:  "Категория 3"
-                        }
-                        ListElement {
-                            name:  "Категория 1"
-                        }
-                        ListElement {
-                            name:  "Категория 2"
-                        }
-                        ListElement {
-                            name:  "Категория 3"
-                        }
-                    }
+                model: CategoryModel
             }
         }
 
         CustomTextButton {
             anchors {
-                right: parent.horizontalCenter
+                right: parent.right
                 bottom: parent.bottom
                 rightMargin: 25
                 bottomMargin: 10
@@ -141,6 +127,14 @@ Item {
             isActive: true
 
             z: 2
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    goodAddEditPopup.open()
+                    goodAddEditPopup.setCategory(GoodRepository.selectedCategoryId)
+                }
+            }
         }
 
         Rectangle {
@@ -190,7 +184,7 @@ Item {
 
                 spacing: 5
 
-                delegate: CategoryGoodsModelDelegate { width: goodsPageList.width - 15 }
+                delegate: GoodModelDelegate { width: goodsPageList.width - 15 }
 
                 footer:
                     Item {
@@ -204,36 +198,7 @@ Item {
                         }
                     }
 
-                model:
-                    ListModel {
-                        ListElement {
-                            name:  "Товар 1"
-                        }
-                        ListElement {
-                            name:  "Товар 2"
-                        }
-                        ListElement {
-                            name:  "Товар 3"
-                        }
-                        ListElement {
-                            name:  "Товар 1"
-                        }
-                        ListElement {
-                            name:  "Товар 2"
-                        }
-                        ListElement {
-                            name:  "Товар 3"
-                        }
-                        ListElement {
-                            name:  "Товар 1"
-                        }
-                        ListElement {
-                            name:  "Товар 2"
-                        }
-                        ListElement {
-                            name:  "Товар 3"
-                        }
-                    }
+                model: GoodModel
             }
         }
     }
