@@ -29,3 +29,20 @@
 * иметь какие-то графики;
 * работать с базой в отдельном потоке;  
 * Ссылка на git репозиторий с историей работы над заданием.
+
+# Пошаговое выполнение тестового задания
+### Разработка форм на основании ТЗ, оценка предстоящей работы
+![Формы графического интерфейса](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/UserInterface.png)
+
+### Разработка модели БД
+![Модель БД](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/DatabaseModel_v2.png)
+
+### Реализация программы, скриншоты с примером работы
+![1](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/1.png)
+![2](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/2.png)
+![3](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/3.png)
+![4](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/4.png)
+![5](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/5.png)
+![6](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/6.png)
+![7](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/7.png)
+![8](https://github.com/Rinkachirukuki/HomeBudgetApp/blob/main/Example%20screenshots/8.png)
